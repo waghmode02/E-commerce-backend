@@ -12,6 +12,11 @@ const app = express();
 const URL = process.env.MONGO_URL;
 const PORT = process.env.PORT || 3000;
 
+if (!URL) {
+    console.error("MONGO_URL is not defined in the .env file");
+    process.exit(1);
+}
+
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
