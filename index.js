@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 
+console.log(URL);
 mongoose.connect(URL)
     .then(() => {
         console.log("DB Connected successfully");
